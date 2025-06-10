@@ -14,7 +14,7 @@ function isInteger(value) {
 }
 
 showNumbersBtn.addEventListener('click', () => {
-  outputDiv.textContent = '';
+  outputDiv.innerHTML = ''; // clear previous output
   let min = minInput.value.trim();
   let max = maxInput.value.trim();
 
@@ -32,14 +32,14 @@ showNumbersBtn.addEventListener('click', () => {
     return;
   }
 
-  // Use a while loop to display numbers from min to max inclusive
+  // Use a while loop to display numbers from min to max inclusive, each separated by <br>
   let current = min;
   let result = '';
 
   while (current <= max) {
-    result += current + ' ';
+    result += current + '<br>';
     current++;
   }
 
-  outputDiv.textContent = result.trim();
+  outputDiv.innerHTML = result.trim();
 });
